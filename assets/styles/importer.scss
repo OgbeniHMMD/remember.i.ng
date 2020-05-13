@@ -2,5 +2,11 @@
 //$body-bg: pink;
 //$body-color: #111;
 
+//font-family: 'Roboto Mono', monospace;
+
+$font-family-monospace:        'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace ;
+$font-family-base:           $font-family-monospace;
+
+
 // Bootstrap and its default variables
 @import "../node_modules/bootstrap/scss/bootstrap";

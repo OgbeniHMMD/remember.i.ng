@@ -12,10 +12,9 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [
-      { src: "https://kit.fontawesome.com/57b5a4abc3.js", crossorigin: "anonymous" }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href: 'https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap', rel: 'stylesheet' },
+      { rel: 'stylesheet', href: 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css' }
     ]
   },
   /*
@@ -35,8 +34,7 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-  ],
+  buildModules: [],
   /*
   ** Nuxt.js modules
   */
