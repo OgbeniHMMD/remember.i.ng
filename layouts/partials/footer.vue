@@ -6,8 +6,8 @@
         <a class="text-secondary" href="/">remember.i.ng</a>
       </div>
       <div class="d-flex mb-0 pt-4 pt-sm-0">
-        <a class="text-dark mr-5" href="//hmmd.xyz">About</a>
-        <a class="text-dark" href="#">Contact</a>
+        <a class="text-dark mr-5" href="/about">About</a>
+        <a class="text-dark" href="//hmmd.xyz#contact">Contact</a>
       </div>
     </div>
   </footer>

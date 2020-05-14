@@ -61,5 +61,8 @@ export default {
     */
     extend(config, ctx) {
     }
+  },
+  generate: {
+    fallback: true // Use'404.html' instead of the default '200.html'
   }
 }
