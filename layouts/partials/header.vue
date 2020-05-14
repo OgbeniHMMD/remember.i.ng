@@ -1,7 +1,7 @@
 <template >
   <header>
     <nav
-      class="navbar sticky-top navbar-expand-md navbar-light bg-white border-bottom shadow-sm bg-light p-1 px-sm-4"
+      class="navbar sticky-top navbar-expand-md navbar-light bg-white border-bottom sha dow-sm p-1 px-sm-4"
     >
       <a class="navbar-brand text-dark lead p-0" href="/">
         <i class="las la-seedling la-2x"></i>
@@ -52,7 +52,4 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  // outline: red 1px solid;
-}
 </style>

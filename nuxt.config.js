@@ -17,6 +17,10 @@ export default {
       { rel: 'stylesheet', href: 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css' }
     ]
   },
+  env: {
+    bloggerId: '9058660136109991168',
+    bloggerKey: 'AIzaSyD43jXF8hy8PtQ-B6Jr0VZ9cWnaWoWVGgI'
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -39,7 +43,6 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
   ],
