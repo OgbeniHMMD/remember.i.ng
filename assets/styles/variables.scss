@@ -1,8 +1,11 @@
 // Your variable overrides
 
+$white: #fff !default;
+$primary: #7752a4;
+
 $border-width: 2px;
-
+$enable-shadows: true;
 $enable-responsive-font-sizes: true;
-$font-family-monospace: 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace ;
+$font-family-monospace: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace;
 $font-family-base: $font-family-monospace;
-

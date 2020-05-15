@@ -1,8 +1,6 @@
 <template >
   <header>
-    <nav
-      class="navbar sticky-top navbar-expand-md navbar-light bg-white border-bottom sha dow-sm p-1 px-sm-4"
-    >
+    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom p-1 px-sm-4">
       <a class="navbar-brand text-dark lead p-0" href="/">
         <i class="las la-seedling la-2x"></i>
         <span>remember.i.ng</span>
@@ -22,7 +20,9 @@
       </button>
 
       <div id="navbar1" class="collapse navbar-collapse" :class="(toggle.navbar ? 'show' : 'hide')">
-        <form class="input-group nav-item border rounded col-md-7 ml-auto mt-2 mt-md-0 px-0">
+        <form
+          class="input-group input-group-sm nav-item border rounded col-md-7 ml-auto mt-2 mt-md-0 px-0"
+        >
           <input
             type="search"
             class="form-control border-0"
@@ -50,6 +50,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-</style>

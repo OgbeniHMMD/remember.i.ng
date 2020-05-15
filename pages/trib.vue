@@ -1,6 +1,6 @@
 <template>
   <div class="container py-4">
-    <div v-if="spinner" class="text-center h1">
+    <div v-if="spinner" class="text-center display-1">
       <i class="las la-spinner la-spin text-primary m-5"></i>
     </div>
 
@@ -35,7 +35,7 @@ export default {
   created() {
     axios
       .get(
-        `https://www.googleapis.com/blogger/v3/blogs/${process.env.bloggerId}/posts/${this.$route.query.id}?key=${process.env.bloggerKey}`
+        `https://www.googleapis.com/blogger/v3/blogs/${process.env.bloggerId}/posts/${this.$route.query.ute}?key=${process.env.bloggerKey}`
       )
       .then(response => {
         this.spinner = false;
