@@ -35,6 +35,11 @@ export default {
       spinner: true
     };
   },
+  head() {
+    return {
+      title: `${process.env.name} - ${process.env.description}`
+    };
+  },
   created() {
     axios
       .get(

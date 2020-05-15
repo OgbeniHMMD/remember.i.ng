@@ -28,9 +28,11 @@ export default {
     };
   },
   head() {
-    return {
-      title: this.post.title + " - OgbeniHMMD's Blog"
-    };
+    try {
+      return {
+        title: `${this.post.title.split(":")[0]} - ${process.env.name}`
+      };
+    } catch (error) {}
   },
   created() {
     axios

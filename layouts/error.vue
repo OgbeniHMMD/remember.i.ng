@@ -24,7 +24,7 @@ export default {
   },
   head() {
     return {
-      title: "Error - remember.i.ng"
+      title: `Error - ${process.env.name}`
     };
   }
 };
