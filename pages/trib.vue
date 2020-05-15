@@ -5,9 +5,9 @@
     </div>
 
     <div v-if="!spinner">
-      <header>
+      <header class="text-center">
         <h1 class="mb-3">{{ post.title.split(':')[0] }}</h1>
-        <h2 class="mb-5">{{ post.title.split(':')[1] }}</h2>
+        <h3 class="mb-5">{{ post.title.split(':')[1] }}</h3>
       </header>
 
       <div v-html="post.content" class="lead"></div>
