@@ -1,6 +1,6 @@
 <template >
   <div class="container py-4">
-    <div class="text-center text-secondary h2 mb-5">Tributes To The Good, The Bad And The Ugly</div>
+    <div class="text-center text-secondary h2 mb-5">{{ appDescription +" X" }}</div>
 
     <div v-if="spinner" class="text-center display-1">
       <i class="las la-spinner la-spin text-primary m-5"></i>
@@ -32,7 +32,8 @@ export default {
     return {
       posts: [],
       errors: [],
-      spinner: true
+      spinner: true,
+      appDescription: process.env.description
     };
   },
   head() {

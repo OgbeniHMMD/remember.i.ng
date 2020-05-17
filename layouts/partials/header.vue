@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom p-1 px-sm-4">
       <a class="navbar-brand text-dark lead p-0" href="/">
         <i class="las la-seedling la-2x"></i>
-        <span>remember.i.ng</span>
+        <span>{{ appName }}</span>
       </a>
 
       <button
@@ -45,6 +45,7 @@
 export default {
   data: function() {
     return {
+      appName: process.env.name,
       toggle: { navbar: false, dropDown1: false }
     };
   }
