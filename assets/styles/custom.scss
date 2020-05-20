@@ -1,13 +1,6 @@
-// Your custom overrides
-* {
-  //outline: red 1px solid;
-}
+// Your custom bootstrap overrides
 
-*::-moz-selection {
-  color: $white;
-  background: $primary;
-}
-*::selection {
+::selection {
   color: $white;
   background: $primary;
 }

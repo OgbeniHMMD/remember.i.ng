@@ -25,13 +25,13 @@
         >
           <input
             type="search"
-            class="form-control border-0"
+            class="form-control border-0 shadow-none"
             placeholder="Search"
             aria-label="Search"
             aria-describedby="button-addon1"
           />
           <div class="input-group-append">
-            <button class="btn bg-white" type="button" id="button-addon1">
+            <button class="btn bg-white shadow-none" type="button" id="button-addon1">
               <i class="las la-search text-secondary"></i>
             </button>
           </div>

@@ -1,11 +1,13 @@
-// Your variable overrides
+// Your bootstrap variable overrides
 
-$white: #fff !default;
-$primary: #7752a4;
+$purple: #7752a4;
 
-$border-width: 2px;
+$primary: $purple;
+$border-width: 0.1rem;
+
 $enable-shadows: true;
 $enable-responsive-font-sizes: true;
+
 $font-family-monospace: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas,
   "Liberation Mono", "Courier New", monospace;
 $font-family-base: $font-family-monospace;
