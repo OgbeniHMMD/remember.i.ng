@@ -12,12 +12,19 @@
       v-for="post in posts.items"
       class="d-flex flex-column flex-md-row position-relative mb-5"
     >
-      <img :src="post.images? post.images[0].url : '/thumb.jpg'" class="thumb" />
+      <img
+        :src=" getAttributes(post).thumbnail? getAttributes(post).thumbnail: '/thumb.jpg'"
+        class="thumb"
+      />
       <div class="mt-3 mt-md-0 ml-md-4">
         <a :href="'/trib?ute=' + post.id" class="stretched-link">
-          <h1 class="text-dark mt-0 mb-2">{{ post.title.split(':')[0] }}</h1>
+          <h1
+            class="text-dark mt-0 mb-2"
+          >{{ getAttributes(post).title? getAttributes(post).title: "Untitled" }}</h1>
         </a>
-        <div class="text-muted lead mt-2 mt-md-3">{{ post.title.split(':')[1] }}</div>
+        <div
+          class="text-muted lead mt-2 mt-md-3"
+        >{{ getAttributes(post).snippet? getAttributes(post).snippet: "- - -" }}</div>
       </div>
     </article>
   </div>
@@ -25,6 +32,7 @@
 
 <script>
 import axios from "axios";
+import frontMatter from "front-matter";
 
 export default {
   data() {
@@ -45,6 +53,13 @@ export default {
       )
       .then(response => (this.posts = response.data))
       .catch(e => $nuxt.error({ message: e.message }));
+  },
+  methods: {
+    getAttributes(rawArticle) {
+      try {
+        return frontMatter(rawArticle.content).attributes;
+      } catch (error) {}
+    }
   }
 };
 </script>
