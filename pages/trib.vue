@@ -13,7 +13,7 @@
           >{{article.attributes.snippet ? article.attributes.snippet : "*No snippet*"}}</h3>
         </header>
 
-        <div v-html="$md.render(article.body)" class="lead"></div>
+        <article v-html="$md.render(article.body)" class="markdown lead"></article>
       </div>
     </div>
   </div>

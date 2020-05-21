@@ -14,6 +14,12 @@ img {
   height: 200px;
 }
 
+// center all markdown images
+.markdown img {
+  display: block;
+  margin: auto;
+}
+
 @include media-breakpoint-up(md) {
   .thumb {
     width: 320px;
