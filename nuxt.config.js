@@ -32,8 +32,9 @@ export default {
     name: process.env.npm_package_name,
     description: process.env.npm_package_description,
 
-    bloggerId: "9058660136109991168",
-    bloggerKey: "AIzaSyD43jXF8hy8PtQ-B6Jr0VZ9cWnaWoWVGgI"
+    bloggerID: "9058660136109991168",
+    bloggerKEY: "AIzaSyD43jXF8hy8PtQ-B6Jr0VZ9cWnaWoWVGgI",
+    bloggerURL: `https://www.googleapis.com/blogger/v3/blogs`
   },
   /*
    ** Customize the progress-bar color
@@ -54,13 +55,16 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxtjs/markdownit"],
-  /*
-   * Using $md to render markdown
-   */
-  markdownit: {
-    injected: true
-  },
+  modules: [
+    "@nuxtjs/axios",
+    "@nuxtjs/pwa",
+    [
+      "@nuxtjs/markdownit",
+      {
+        injected: true
+      }
+    ]
+  ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

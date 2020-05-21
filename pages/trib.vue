@@ -7,10 +7,10 @@
 
       <div v-else>
         <header class="text-center">
-          <h1 class="mb-3">{{article.attributes.title ? article.attributes.title : "Untitled"}}</h1>
+          <h1 class="mb-3">{{article.attributes.title ? article.attributes.title : "*No title*"}}</h1>
           <h3
             class="mb-5 text-muted"
-          >{{article.attributes.snippet ? article.attributes.snippet : "- - -"}}</h3>
+          >{{article.attributes.snippet ? article.attributes.snippet : "*No snippet*"}}</h3>
         </header>
 
         <div v-html="$md.render(article.body)" class="lead"></div>
@@ -41,12 +41,15 @@ export default {
   created() {
     axios
       .get(
-        `https://www.googleapis.com/blogger/v3/blogs/${process.env.bloggerId}/posts/${this.$route.query.ute}?key=${process.env.bloggerKey}`
+        `${process.env.bloggerURL}/${process.env.bloggerID}/posts/${this.$route.query.ute}`,
+        {
+          params: {
+            key: process.env.bloggerKEY
+          }
+        }
       )
-      .then(response => {
-        this.article = frontMatter(response.data.content);
-      })
-      .catch(e => $nuxt.error({ message: e.message }));
+      .then(response => (this.article = frontMatter(response.data.content)))
+      .catch(error => $nuxt.error({ message: error.message }));
   }
 };
 </script>

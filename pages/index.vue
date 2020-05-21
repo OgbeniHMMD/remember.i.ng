@@ -20,11 +20,11 @@
         <a :href="'/trib?ute=' + post.id" class="stretched-link">
           <h1
             class="text-dark mt-0 mb-2"
-          >{{ getAttributes(post).title? getAttributes(post).title: "Untitled" }}</h1>
+          >{{ getAttributes(post).title? getAttributes(post).title: "*No title*" }}</h1>
         </a>
         <div
           class="text-muted lead mt-2 mt-md-3"
-        >{{ getAttributes(post).snippet? getAttributes(post).snippet: "- - -" }}</div>
+        >{{ getAttributes(post).snippet? getAttributes(post).snippet: "*No snippet*" }}</div>
       </div>
     </article>
   </div>
@@ -48,11 +48,14 @@ export default {
   },
   created() {
     axios
-      .get(
-        `https://www.googleapis.com/blogger/v3/blogs/${process.env.bloggerId}/posts?key=${process.env.bloggerKey}&fetchImages=true`
-      )
+      .get(`${process.env.bloggerURL}/${process.env.bloggerID}/posts`, {
+        params: {
+          key: process.env.bloggerKEY,
+          fetchImages: true
+        }
+      })
       .then(response => (this.posts = response.data))
-      .catch(e => $nuxt.error({ message: e.message }));
+      .catch(error => $nuxt.error({ message: error.message }));
   },
   methods: {
     getAttributes(rawArticle) {
