@@ -54,7 +54,13 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/axios", "@nuxtjs/pwa"],
+  modules: ["@nuxtjs/axios", "@nuxtjs/pwa", "@nuxtjs/markdownit"],
+  /*
+   * Using $md to render markdown
+   */
+  markdownit: {
+    injected: true
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

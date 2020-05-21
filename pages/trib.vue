@@ -11,7 +11,7 @@
           <h3 class="mb-5 text-muted">{{ post.title.split(':')[1] }}</h3>
         </header>
 
-        <div v-html="post.content" class="lead"></div>
+        <div v-html="$md.render(post.content)" class="lead"></div>
       </div>
     </div>
   </div>
