@@ -2,9 +2,9 @@
   <div class="container py-4">
     <div class="text-center text-secondary h2 mb-5">{{ appDescription }}</div>
 
-    <div v-if="!posts" class="text-center display-1">
-      <i class="las la-spinner la-spin text-primary m-5"></i>
-    </div>
+    <template v-if="!posts">
+      <facebook-loader v-for="n in 3" v-bind:key="n" :speed="3" primaryColor="#cccccc"></facebook-loader>
+    </template>
 
     <article
       v-else
@@ -33,8 +33,12 @@
 <script>
 import axios from "axios";
 import frontMatter from "front-matter";
+import { FacebookLoader } from "vue-content-loader";
 
 export default {
+  components: {
+    FacebookLoader
+  },
   data() {
     return {
       posts: null,

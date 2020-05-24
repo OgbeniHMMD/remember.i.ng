@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="container py-4">
-      <div v-if="!article" class="text-center display-1">
-        <i class="las la-spinner la-spin text-primary m-5"></i>
-      </div>
+      <facebook-loader v-if="!article" :speed="3" primaryColor="#cccccc"></facebook-loader>
 
       <div v-else>
         <header class="text-center">
@@ -23,9 +21,14 @@
 <script>
 import axios from "axios";
 import frontMatter from "front-matter";
+import { FacebookLoader } from "vue-content-loader";
+// Or: InstagramLoader | CodeLoader | ListLoader | BulletListLoader
 
 export default {
   layout: "blog",
+  components: {
+    FacebookLoader
+  },
   data: function() {
     return {
       article: null
