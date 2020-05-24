@@ -30,6 +30,7 @@ export default {
   },
   data: function() {
     return {
+      x: "",
       article: null
     };
   },
@@ -43,9 +44,7 @@ export default {
   created() {
     axios
       .get(
-        `${process.env.bloggerURL}/${
-          process.env.bloggerID
-        }/posts/${this.$route.hash.slice(2)}`,
+        `${process.env.bloggerURL}/${process.env.bloggerID}/posts/${this.$route.query.t}`,
         {
           params: {
             key: process.env.bloggerKEY

@@ -17,7 +17,7 @@
         class="thumb"
       />
       <div class="mt-3 mt-md-0 ml-md-4">
-        <a :href="'/i#!' + post.id" class="stretched-link">
+        <a :href="'/i/?t=' + post.id" class="stretched-link">
           <h1
             class="text-dark mt-0 mb-2"
           >{{ getAttributes(post).title? getAttributes(post).title: "*No title*" }}</h1>
@@ -43,11 +43,6 @@ export default {
     return {
       posts: null,
       appDescription: process.env.description
-    };
-  },
-  head() {
-    return {
-      title: `${process.env.name} - ${process.env.description}`
     };
   },
   created() {
