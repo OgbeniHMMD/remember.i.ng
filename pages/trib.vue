@@ -22,6 +22,7 @@
 import axios from "axios";
 import frontMatter from "front-matter";
 import { FacebookLoader } from "vue-content-loader";
+// Or: InstagramLoader | CodeLoader | ListLoader | BulletListLoader
 
 export default {
   layout: "blog",
