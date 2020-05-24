@@ -5,6 +5,13 @@
   background: $primary;
 }
 
+blockquote {
+  padding: 1.5rem;
+  color: $secondary;
+  background-color: #fff;
+  border: $border-width solid $primary;
+}
+
 img {
   max-width: 100%;
 }

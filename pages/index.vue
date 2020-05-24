@@ -17,7 +17,7 @@
         class="thumb"
       />
       <div class="mt-3 mt-md-0 ml-md-4">
-        <a :href="'/trib?ute=' + post.id" class="stretched-link">
+        <a :href="'/i#!' + post.id" class="stretched-link">
           <h1
             class="text-dark mt-0 mb-2"
           >{{ getAttributes(post).title? getAttributes(post).title: "*No title*" }}</h1>

@@ -10,7 +10,6 @@
             class="mb-5 text-muted"
           >{{article.attributes.snippet ? article.attributes.snippet : "*No snippet*"}}</h3>
         </header>
-
         <article v-html="$md.render(article.body)" class="markdown lead"></article>
       </div>
     </div>
@@ -44,7 +43,9 @@ export default {
   created() {
     axios
       .get(
-        `${process.env.bloggerURL}/${process.env.bloggerID}/posts/${this.$route.query.ute}`,
+        `${process.env.bloggerURL}/${
+          process.env.bloggerID
+        }/posts/${this.$route.hash.slice(2)}`,
         {
           params: {
             key: process.env.bloggerKEY
