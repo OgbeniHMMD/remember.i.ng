@@ -1,10 +1,8 @@
 <template >
   <div class="container py-4">
-    <div class="text-center text-secondary h2 mb-5">{{ appDescription }}</div>
+    <h2 class="text-center text-secondary mb-5">{{ appDescription }}</h2>
 
-    <template v-if="!posts">
-      <facebook-loader v-for="n in 3" v-bind:key="n" :speed="3" primaryColor="#cccccc"></facebook-loader>
-    </template>
+    <the-spinner v-if="!posts" />
 
     <article
       v-else
@@ -33,21 +31,23 @@
 <script>
 import axios from "axios";
 import frontMatter from "front-matter";
-import { FacebookLoader } from "vue-content-loader";
+import TheSpinner from "~/components/TheSpinner.vue";
 
 export default {
   components: {
-    FacebookLoader
+    TheSpinner
   },
   data() {
     return {
-      posts: null,
+      posts: "",
       appDescription: process.env.description
     };
   },
   created() {
+    // fetch data from Blogger
+    const URL = `${process.env.bloggerURI + process.env.bloggerID}/posts/`;
     axios
-      .get(`${process.env.bloggerURL}/${process.env.bloggerID}/posts`, {
+      .get(URL, {
         params: {
           key: process.env.bloggerKEY,
           fetchImages: true

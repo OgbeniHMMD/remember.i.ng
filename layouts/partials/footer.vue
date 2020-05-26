@@ -1,5 +1,5 @@
 <template >
-  <footer class="bg-white border-top text-secondary px-1 py-3 px-md-4 py-sm-5">
+  <footer class="bg-light border-secondary border-top text-secondary px-1 py-3 px-md-4 py-sm-5">
     <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center w-100">
       <div class="mb-0">
         <i class="las la-seedling la-2x"></i>

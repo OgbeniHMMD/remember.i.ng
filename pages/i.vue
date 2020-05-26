@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="container py-4">
-      <facebook-loader v-if="!article" :speed="3" primaryColor="#cccccc"></facebook-loader>
+      <the-spinner v-if="!post" />
 
       <div v-else>
         <header class="text-center">
-          <h1 class="mb-3">{{article.attributes.title ? article.attributes.title : "*No title*"}}</h1>
+          <h1 class="mb-3">{{post.attributes.title ? post.attributes.title : "*No title*"}}</h1>
           <h3
             class="mb-5 text-muted"
-          >{{article.attributes.snippet ? article.attributes.snippet : "*No snippet*"}}</h3>
+          >{{post.attributes.snippet ? post.attributes.snippet : "*No snippet*"}}</h3>
         </header>
-        <article v-html="$md.render(article.body)" class="markdown lead"></article>
+        <article v-html="$md.render(post.body)" class="markdown lead"></article>
       </div>
     </div>
   </div>
@@ -20,38 +20,36 @@
 <script>
 import axios from "axios";
 import frontMatter from "front-matter";
-import { FacebookLoader } from "vue-content-loader";
-// Or: InstagramLoader | CodeLoader | ListLoader | BulletListLoader
+import TheSpinner from "~/components/TheSpinner.vue";
 
 export default {
   layout: "blog",
   components: {
-    FacebookLoader
+    TheSpinner
   },
   data: function() {
     return {
-      x: "",
-      article: null
+      post: null
     };
   },
   head() {
     try {
       return {
-        title: `${this.article.attributes.title} - ${process.env.name}`
+        title: `${this.post.attributes.title} - ${process.env.name}`
       };
     } catch (error) {}
   },
   created() {
+    // fetch data from Blogger
+    const blogId = this.$route.query.t;
+    const URL = `${process.env.bloggerURI + process.env.bloggerID}/posts/`;
     axios
-      .get(
-        `${process.env.bloggerURL}/${process.env.bloggerID}/posts/${this.$route.query.t}`,
-        {
-          params: {
-            key: process.env.bloggerKEY
-          }
+      .get(URL + blogId, {
+        params: {
+          key: process.env.bloggerKEY
         }
-      )
-      .then(response => (this.article = frontMatter(response.data.content)))
+      })
+      .then(response => (this.post = frontMatter(response.data.content)))
       .catch(error => $nuxt.error({ message: error.message }));
   }
 };
