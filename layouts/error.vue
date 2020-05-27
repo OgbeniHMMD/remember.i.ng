@@ -19,12 +19,13 @@ export default {
   props: {
     error: {
       type: Object,
-      default: null
+      default: null,
+      statusCode: ""
     }
   },
   head() {
     return {
-      title: `Error - ${process.env.name}`
+      title: `${this.error.statusCode} error - ${process.env.name}`
     };
   }
 };
