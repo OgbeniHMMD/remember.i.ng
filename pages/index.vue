@@ -15,7 +15,7 @@
         class="thumb"
       />
       <div class="mt-3 mt-md-0 ml-md-4">
-        <a :href="'/i/?t=' + post.id" class="stretched-link">
+        <a :href="'/' + post.id" class="stretched-link">
           <h1
             class="text-dark mt-0 mb-2"
           >{{ getAttributes(post).title? getAttributes(post).title: "*No title*" }}</h1>
@@ -47,13 +47,13 @@ export default {
   created() {
     // fetch data from Blogger
     const blogger = bloggerJSON;
-
-    const URL = `${blogger.uri + blogger.id}/posts/`;
+    const URL = `${blogger.uri}/blogs/${blogger.id}/posts/`;
     axios
       .get(URL, {
         params: {
           key: blogger.key,
-          fetchImages: false
+          fetchImages: false,
+          replies: false
         }
       })
       .then(response => (this.posts = response.data))

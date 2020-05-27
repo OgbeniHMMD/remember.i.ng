@@ -42,10 +42,9 @@ export default {
   },
   created() {
     // fetch data from Blogger
-
     const blogger = bloggerJSON;
-    const blogId = this.$route.query.t;
-    const URL = `${blogger.uri + blogger.id}/posts/${blogId}`;
+    const blogId = this.$route.params.tribute;
+    const URL = `${blogger.uri}/blogs/${blogger.id}/posts/${blogId}`;
     axios
       .get(URL, {
         params: {
