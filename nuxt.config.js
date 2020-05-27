@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_description - process.env.npm_package_name,
+    title: `${process.env.npm_package_description} - ${process.env.npm_package_name}`,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -29,8 +29,15 @@ export default {
     ]
   },
   env: {
-    name: process.env.npm_package_name,
-    description: process.env.npm_package_description
+    app: {
+      name: process.env.npm_package_name,
+      slogan: process.env.npm_package_description
+    },
+    blogger: {
+      id: "9058660136109991168",
+      key: "AIzaSyD43jXF8hy8PtQ-B6Jr0VZ9cWnaWoWVGgI",
+      uri: "https://www.googleapis.com/blogger/v3"
+    }
   },
   /*
    ** Customize the progress-bar color

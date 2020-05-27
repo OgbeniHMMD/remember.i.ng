@@ -19,7 +19,6 @@
 
 <script>
 import axios from "axios";
-import bloggerJSON from "~/.env/blogger.json";
 import frontMatter from "front-matter";
 import TheSpinner from "~/components/TheSpinner.vue";
 
@@ -36,13 +35,13 @@ export default {
   head() {
     try {
       return {
-        title: `${this.post.attributes.title} - ${process.env.name}`
+        title: `${this.post.attributes.title} - ${process.env.app.name}`
       };
     } catch (error) {}
   },
   created() {
     // fetch data from Blogger
-    const blogger = bloggerJSON;
+    const blogger = process.env.blogger;
     const blogId = this.$route.params.tribute;
     const URL = `${blogger.uri}/blogs/${blogger.id}/posts/${blogId}`;
     axios

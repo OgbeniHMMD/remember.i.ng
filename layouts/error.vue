@@ -25,7 +25,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.error.statusCode} error - ${process.env.name}`
+      title: `${this.error.statusCode} error - ${process.env.app.name}`
     };
   }
 };

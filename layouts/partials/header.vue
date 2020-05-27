@@ -45,7 +45,7 @@
 export default {
   data: function() {
     return {
-      appName: process.env.name,
+      appName: process.env.app.name,
       toggle: { navbar: false, dropDown1: false }
     };
   }
