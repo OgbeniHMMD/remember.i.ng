@@ -30,11 +30,7 @@ export default {
   },
   env: {
     name: process.env.npm_package_name,
-    description: process.env.npm_package_description,
-
-    bloggerID: "9058660136109991168",
-    bloggerKEY: "AIzaSyD43jXF8hy8PtQ-B6Jr0VZ9cWnaWoWVGgI",
-    bloggerURI: "https://www.googleapis.com/blogger/v3/blogs/"
+    description: process.env.npm_package_description
   },
   /*
    ** Customize the progress-bar color

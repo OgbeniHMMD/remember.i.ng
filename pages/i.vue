@@ -19,6 +19,7 @@
 
 <script>
 import axios from "axios";
+import bloggerJSON from "~/.env/blogger.json";
 import frontMatter from "front-matter";
 import TheSpinner from "~/components/TheSpinner.vue";
 
@@ -29,7 +30,7 @@ export default {
   },
   data: function() {
     return {
-      post: null
+      post: ""
     };
   },
   head() {
@@ -41,12 +42,14 @@ export default {
   },
   created() {
     // fetch data from Blogger
+
+    const blogger = bloggerJSON;
     const blogId = this.$route.query.t;
-    const URL = `${process.env.bloggerURI + process.env.bloggerID}/posts/`;
+    const URL = `${blogger.uri + blogger.id}/posts/${blogId}`;
     axios
-      .get(URL + blogId, {
+      .get(URL, {
         params: {
-          key: process.env.bloggerKEY
+          key: blogger.key
         }
       })
       .then(response => (this.post = frontMatter(response.data.content)))

@@ -31,6 +31,7 @@
 <script>
 import axios from "axios";
 import frontMatter from "front-matter";
+import bloggerJSON from "~/.env/blogger.json";
 import TheSpinner from "~/components/TheSpinner.vue";
 
 export default {
@@ -45,12 +46,14 @@ export default {
   },
   created() {
     // fetch data from Blogger
-    const URL = `${process.env.bloggerURI + process.env.bloggerID}/posts/`;
+    const blogger = bloggerJSON;
+
+    const URL = `${blogger.uri + blogger.id}/posts/`;
     axios
       .get(URL, {
         params: {
-          key: process.env.bloggerKEY,
-          fetchImages: true
+          key: blogger.key,
+          fetchImages: false
         }
       })
       .then(response => (this.posts = response.data))
