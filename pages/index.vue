@@ -1,4 +1,4 @@
-<template >
+<template>
   <div class="container py-4">
     <h2 class="text-center text-secondary mb-5">{{ appDescription }}</h2>
 
