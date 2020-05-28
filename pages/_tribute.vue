@@ -16,10 +16,10 @@
   </div>
 </template>
 
-
 <script>
 import axios from "axios";
 import frontMatter from "front-matter";
+import slugsJSON from "~/assets/redirects.json";
 import TheSpinner from "~/components/TheSpinner.vue";
 
 export default {
@@ -42,8 +42,13 @@ export default {
   created() {
     // fetch data from Blogger
     const blogger = process.env.blogger;
-    const blogId = this.$route.params.tribute;
-    const URL = `${blogger.uri}/blogs/${blogger.id}/posts/${blogId}`;
+
+    // convert slug to blog Id if it exist
+    let postId = this.$route.params.tribute;
+    const postSlug = slugsJSON.find(item => item.slug === postId);
+    postId = postSlug ? postSlug.id : postId;
+
+    const URL = `${blogger.uri}/blogs/${blogger.id}/posts/${postId}`;
     axios
       .get(URL, {
         params: {

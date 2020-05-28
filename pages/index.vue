@@ -15,7 +15,7 @@
         class="thumb"
       />
       <div class="mt-3 mt-md-0 ml-md-4">
-        <a :href="'/' + post.id" class="stretched-link">
+        <a :href="'/' + getSlug(post.id)" class="stretched-link">
           <h1
             class="text-dark mt-0 mb-2"
           >{{ getAttributes(post).title? getAttributes(post).title: "*No title*" }}</h1>
@@ -31,6 +31,7 @@
 <script>
 import axios from "axios";
 import frontMatter from "front-matter";
+import slugsJSON from "~/assets/redirects.json";
 import TheSpinner from "~/components/TheSpinner.vue";
 
 export default {
@@ -60,6 +61,11 @@ export default {
       .catch(error => $nuxt.error({ message: error.message }));
   },
   methods: {
+    getSlug(itemId) {
+      const itemSlug = slugsJSON.find(item => item.id === itemId);
+      return itemSlug ? itemSlug.slug : itemId;
+    },
+
     getAttributes(rawArticle) {
       try {
         return frontMatter(rawArticle.content).attributes;
