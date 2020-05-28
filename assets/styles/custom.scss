@@ -4,25 +4,42 @@ body {
 }
 
 ::selection {
-  color: $white;
-  background: $primary;
+  @extend .text-white;
+  @extend .bg-primary;
 }
 
-blockquote {
-  padding: $spacer;
-  color: $secondary;
-  text-align: center;
-  background-color: $white;
-  border: $border-width solid $border-color;
-  p {
-    margin-bottom: 0;
-    display: block;
+// markdown styling
+article {
+  blockquote {
+    @extend .p-2;
+    @extend .border;
+    @extend .rounded;
+    @extend .bg-white;
+    @extend .text-center;
+    @extend .text-secondary;
+
+    img {
+      @extend .rounded;
+    }
+
+    p {
+      @extend .mb-0;
+      @extend .d-block;
+    }
+  }
+
+  table {
+    @extend .table, .table-hover;
+
+    thead {
+      @extend .thead-light;
+    }
   }
 }
 
 //force thumbnails to 100% on small devices
 img {
-  max-width: 100%;
+  @extend .img-fluid;
 }
 
 .thumb {
@@ -32,8 +49,8 @@ img {
 
 // center all markdown images
 .markdown img {
-  display: block;
-  margin: auto;
+  @extend .d-block;
+  @extend .m-auto;
 }
 
 @include media-breakpoint-up(md) {

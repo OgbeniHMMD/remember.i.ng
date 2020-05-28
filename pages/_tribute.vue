@@ -7,7 +7,7 @@
         <header class="text-center">
           <h1 class="mb-3">{{post.attributes.title ? post.attributes.title : "*No title*"}}</h1>
           <h3
-            class="mb-5 text-muted"
+            class="mb-4 text-muted"
           >{{post.attributes.snippet ? post.attributes.snippet : "*No snippet*"}}</h3>
         </header>
         <article v-html="$md.render(post.body)" class="markdown lead"></article>
