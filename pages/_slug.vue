@@ -12,7 +12,7 @@
         target="_blank"
         class="text-muted"
         title="Edit this page on GitHub"
-        :href="`${github.url}/edit/${github.branch}/content/tribute/${tribute.slug}.md`"
+        :href="`${github.url}/edit/${github.branch}/content/tributes/${tribute.slug}.md`"
       >
         Edit this page on GitHub
         <i class="las la-external-link-alt mr-3"></i>
