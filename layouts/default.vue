@@ -19,8 +19,6 @@ export default {
 </script>
 
 <style lang="scss">
-//Import BootstrapVue
-@import "~/assets/styles/variables.scss";
-@import "~/node_modules/bootstrap/scss/bootstrap";
-@import "~/assets/styles/custom.scss";
+//Import SCSS files importer
+@import "~/assets/styles/importer.scss";
 </style>

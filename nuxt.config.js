@@ -23,8 +23,7 @@ export default {
       },
       {
         rel: "stylesheet",
-        href:
-          "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+        href: "/assets/line-awesome/1.3.0/css/line-awesome.min.css"
       }
     ]
   },
@@ -61,6 +60,7 @@ export default {
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
+    "@nuxt/content",
     [
       "@nuxtjs/markdownit",
       {
