@@ -1,6 +1,6 @@
 // Your custom bootstrap overrides
 body {
-  background-image: url("/light-wool.png");
+  background-image: url("/img/light-wool.png");
 }
 
 ::selection {
@@ -9,18 +9,14 @@ body {
 }
 
 // markdown styling
-article {
+.markdown {
   blockquote {
-    @extend .p-2;
-    @extend .border;
+    @extend .p-3;
     @extend .rounded;
     @extend .bg-white;
     @extend .text-center;
     @extend .text-secondary;
-
-    img {
-      @extend .rounded;
-    }
+    @extend .shadow;
 
     p {
       @extend .mb-0;
@@ -28,6 +24,13 @@ article {
     }
   }
 
+  // center all markdown images
+  img {
+    @extend .d-block;
+    @extend .m-auto;
+  }
+
+  // extent bootsrap tables
   table {
     @extend .table, .table-hover;
 
@@ -45,12 +48,6 @@ img {
 .thumb {
   width: 100%;
   height: 200px;
-}
-
-// center all markdown images
-.markdown img {
-  @extend .d-block;
-  @extend .m-auto;
 }
 
 @include media-breakpoint-up(md) {

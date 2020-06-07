@@ -23,7 +23,7 @@ export default {
       },
       {
         rel: "stylesheet",
-        href: "/assets/line-awesome/1.3.0/css/line-awesome.min.css"
+        href: "/line-awesome/1.3.0/css/line-awesome.min.css"
       }
     ]
   },
@@ -57,17 +57,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    "@nuxtjs/axios",
-    "@nuxtjs/pwa",
-    "@nuxt/content",
-    [
-      "@nuxtjs/markdownit",
-      {
-        injected: true
-      }
-    ]
-  ],
+  modules: ["@nuxtjs/pwa", "@nuxt/content"],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
