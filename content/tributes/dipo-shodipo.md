@@ -1,7 +1,7 @@
 ---
 title: "Dipo Sodipo (Pope)"
 snippet: "Nigeria's first one-man band — One Of The Few Musician That Doesn't Talk Much"
-thumbnail: "/img/dipo-shodipo/dipo-shodipo-thumb.jpg"
+thumbnail: /img/dipo-shodipo/thumbnail.jpg
 ---
 
 > ![Dipo and friends](/img/dipo-shodipo/dipo-shodipo-and-friends.jpg)

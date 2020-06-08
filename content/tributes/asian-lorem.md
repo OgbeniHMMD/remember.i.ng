@@ -5,7 +5,7 @@ snippet: アジアン・カンフー・ジェネレーション
 
 Asian Kung-Fu Generation (アジアン・カンフー・ジェネレーション Ajian Kanfū Jenerēshon, stylized as ASIAN KUNG-FU GENERATION) is a Japanese alternative rock band formed in Yokohama, Japan, in 1996.
 
-![thumbnail](/thumb.jpg)
+![thumbnail](/img/default-thumbnail.jpg)
 
 For its entire career, the band has consisted of vocalist Masafumi Gotoh, guitarist Kensuke Kita, bassist Takahiro Yamada, and drummer Kiyoshi Ijichi.
 
@@ -13,4 +13,4 @@ Starting out as a college band, Asian Kung-Fu Generation released a series of in
 
 Their songs incorporate various aspects of the genres, most typically expressing fast tempos and prominent power chord guitar riffs in addition to rhythmic groove and emotional lyrics. Despite the indie nature of their music, the band has enjoyed worldwide commercial success in addition to critical acclaim. Asian Kung-Fu Generation has been cited as one of the best, most balanced modern rock bands to emerge from Japan in the 2000s.
 
-[Asian Kung-Fu Generation - Wikipedia](https://en.wikipedia.org/wiki/Asian_Kung-Fu_Generation)
+Read more: [Asian Kung-Fu Generation - Wikipedia](https://en.wikipedia.org/wiki/Asian_Kung-Fu_Generation)
