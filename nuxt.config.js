@@ -31,11 +31,6 @@ export default {
     app: {
       name: process.env.npm_package_name,
       slogan: process.env.npm_package_description
-    },
-    blogger: {
-      id: "9058660136109991168",
-      key: "AIzaSyD43jXF8hy8PtQ-B6Jr0VZ9cWnaWoWVGgI",
-      uri: "https://www.googleapis.com/blogger/v3"
     }
   },
   /*
