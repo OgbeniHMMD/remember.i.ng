@@ -18,6 +18,10 @@
         <i class="las la-external-link-alt mr-3"></i>
       </a>
     </div>
+
+    <div class="disqus" v-if="tribute.disqus != false">
+      <Disqus class="mt-4 p-2 p-sm-4 bg-white shadow border" />
+    </div>
   </section>
 </template>
 

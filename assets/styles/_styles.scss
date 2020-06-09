@@ -11,11 +11,12 @@ body {
 // markdown styling
 .markdown {
   blockquote {
-    @extend .p-3;
+    @extend .p-2, .p-sm-3;
     @extend .bg-white;
     @extend .text-center;
     @extend .text-secondary;
     @extend .shadow;
+    @extend .border;
 
     p {
       @extend .mb-0;
@@ -31,8 +32,11 @@ body {
 
   // extent bootsrap tables
   table {
-    @extend .table, .table-hover;
+    @extend .table;
+    @extend .table-hover;
+    @extend .border;
     @extend .shadow;
+    @extend .bg-white;
 
     thead {
       @extend .thead-light;
