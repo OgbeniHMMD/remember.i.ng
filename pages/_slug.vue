@@ -19,15 +19,28 @@
       </a>
     </div>
 
-    <div class="disqus" v-if="tribute.disqus != false">
-      <Disqus class="mt-4 p-2 p-sm-4 bg-white shadow border" />
-    </div>
+    <template class="disqus" v-if="tribute.disqus != false">
+      <Disqus
+        class="mt-4 p-2 p-sm-4 bg-white shadow border"
+        title="document.title"
+        shortname="remember-i-ng"
+        :identifier="$route.params.slug"
+        :url="`https://hmmd.xyz/blog/${$nuxt.$route.fullPath}`"
+      />
+    </template>
   </section>
 </template>
 
 
 <script>
+import { Disqus } from "vue-disqus";
+
 export default {
+  name: "PostPage",
+  components: {
+    Disqus
+  },
+
   data: function() {
     return {
       // github repository
